@@ -1,6 +1,7 @@
 import type { Product } from "../types";
 import { useCart } from "../context/CartContext";
 import { ShoppingCart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   product: Product;
@@ -8,6 +9,8 @@ interface Props {
 
 const ProductCard = ({ product }: Props) => {
   const { addToCart } = useCart();
+
+  const navigate = useNavigate();
 
   const handleAdd = () => {
     addToCart({
@@ -20,7 +23,10 @@ const ProductCard = ({ product }: Props) => {
   };
 
   return (
-    <div className="border rounded-lg p-4 shadow-sm flex flex-col">
+    <div
+      onClick={() => navigate(`/product/${product.id}`)}
+      className="border rounded-lg p-4 shadow-sm flex flex-col"
+    >
       <img
         src={product.images[0]}
         alt={product.title}
@@ -32,7 +38,10 @@ const ProductCard = ({ product }: Props) => {
       <p className="text-lg font-bold mt-2">₹ {product.price}</p>
 
       <button
-        onClick={handleAdd}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleAdd();
+        }}
         className="mt-auto bg-black text-white py-2 rounded hover:opacity-80 flex gap-x-2 items-center justify-center cursor-pointer"
       >
         <span>Add to Cart</span>
