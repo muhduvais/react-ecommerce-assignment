@@ -50,3 +50,13 @@ Centralized API logic to keep components clean and reusable.
   - Add to cart
   - Remove from cart
   - Total items and total price calculation
+
+  ## Phase 6 — URL Sync (Filtering & Sorting)
+
+- Implemented category filtering using URL query params
+- Added sorting (price and name)
+- Used `useSearchParams` to sync UI with URL
+
+### Note
+Filters and sorting persist on refresh and support back/forward navigation.
+Multi-category filtering is not implemented due to API limitations and requirement to avoid local filtering.
