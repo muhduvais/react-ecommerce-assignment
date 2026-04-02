@@ -42,3 +42,11 @@ Cart stores only required product fields instead of full product object.
 
 ### Note
 Centralized API logic to keep components clean and reusable.
+
+## Phase 5 — Cart Context
+
+- Implemented global cart state using Context API
+- Added:
+  - Add to cart
+  - Remove from cart
+  - Total items and total price calculation
