@@ -10,7 +10,7 @@ test("homepage loads products", async ({ page }) => {
 test("add to cart and remove item", async ({ page }) => {
   await page.goto("http://localhost:5173/");
 
-  // Add first product
+  // Add product to cart
   await page.locator("text=Add to Cart").first().click();
 
   // Go to cart
