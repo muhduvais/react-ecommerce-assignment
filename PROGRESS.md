@@ -60,3 +60,9 @@ Centralized API logic to keep components clean and reusable.
 ### Note
 Filters and sorting persist on refresh and support back/forward navigation.
 Multi-category filtering is not implemented due to API limitations and requirement to avoid local filtering.
+
+## Phase 7 — Cart Persistence
+
+- Implemented cart persistence using localStorage
+- Cart state loads on app initialization
+- Automatically syncs on updates
