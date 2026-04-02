@@ -78,3 +78,10 @@ Multi-category filtering is not implemented due to API limitations and requireme
 - Implemented dynamic route `/product/:id`
 - Fetched and displayed individual product details
 - Added Add to Cart functionality
+
+## Phase 10 — Cart Page
+
+- Displayed cart items with quantity
+- Added remove from cart functionality
+- Showed total items and total price
+- Added navigation to cart page
