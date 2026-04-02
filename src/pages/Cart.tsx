@@ -117,7 +117,7 @@ function Cart() {
 
                     {/* Price */}
                     <p className="text-[14px] sm:text-[15px] font-semibold text-stone-900">
-                      ₹ {(item.price * item.quantity).toFixed(2)}
+                      $ {(item.price * item.quantity).toFixed(2)}
                     </p>
                   </div>
                 </div>
@@ -139,7 +139,7 @@ function Cart() {
                     {cart.length === 1 ? "item" : "items"})
                   </span>
                   <span className="text-stone-700 font-medium">
-                    ₹ {subtotal.toFixed(2)}
+                    $ {subtotal.toFixed(2)}
                   </span>
                 </div>
 
@@ -149,14 +149,14 @@ function Cart() {
                     <span className="text-emerald-600 font-medium">Free</span>
                   ) : (
                     <span className="text-stone-700 font-medium">
-                      ₹ {shipping.toFixed(2)}
+                      $ {shipping.toFixed(2)}
                     </span>
                   )}
                 </div>
 
                 {shipping > 0 && (
                   <p className="text-[11px] text-stone-400 bg-[#F9F7F4] rounded-lg px-3 py-2 leading-relaxed">
-                    Add ₹ {(999 - subtotal).toFixed(2)} more for free shipping
+                    Add $ {(999 - subtotal).toFixed(2)} more for free shipping
                   </p>
                 )}
 
@@ -165,7 +165,7 @@ function Cart() {
                     Total
                   </span>
                   <span className="font-bold text-stone-900 text-[15px]">
-                    ₹ {total.toFixed(2)}
+                    $ {total.toFixed(2)}
                   </span>
                 </div>
               </div>

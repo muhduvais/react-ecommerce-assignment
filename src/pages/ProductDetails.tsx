@@ -113,7 +113,6 @@ const ProductDetail = () => {
               />
             </div>
 
-            {/* Thumbnail Strip */}
             {product.images.length > 1 && (
               <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
                 {product.images.map((img, i) => (
@@ -154,7 +153,7 @@ const ProductDetail = () => {
             {/* Price */}
             <div className="flex items-baseline gap-3 mb-4">
               <span className="text-2xl sm:text-3xl font-bold text-stone-900">
-                ₹ {product.price.toFixed(2)}
+                $ {product.price.toFixed(2)}
               </span>
             </div>
 

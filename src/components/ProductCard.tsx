@@ -1,6 +1,7 @@
+import { useState } from "react";
 import type { Product } from "../types";
 import { useCart } from "../context/CartContext";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -9,8 +10,9 @@ interface Props {
 
 const ProductCard = ({ product }: Props) => {
   const { addToCart } = useCart();
-
   const navigate = useNavigate();
+  
+  const [added, setAdded] = useState(false);
 
   const handleAdd = () => {
     addToCart({
@@ -20,12 +22,15 @@ const ProductCard = ({ product }: Props) => {
       images: product.images,
       quantity: 1,
     });
+
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
   };
 
   return (
     <div
       onClick={() => navigate(`/product/${product.id}`)}
-      className="border rounded-lg p-4 shadow-sm flex flex-col"
+      className="border rounded-lg p-4 shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-shadow"
     >
       <img
         src={product.images[0]}
@@ -35,17 +40,22 @@ const ProductCard = ({ product }: Props) => {
 
       <h2 className="text-sm font-semibold line-clamp-2">{product.title}</h2>
 
-      <p className="text-lg font-bold mt-2">₹ {product.price}</p>
+      <p className="text-lg font-bold mt-2">$ {product.price}</p>
 
       <button
         onClick={(e) => {
           e.stopPropagation();
           handleAdd();
         }}
-        className="mt-auto bg-black text-white py-2 rounded hover:opacity-80 flex gap-x-2 items-center justify-center cursor-pointer"
+        disabled={added}
+        className={`mt-auto py-2 rounded flex gap-x-2 items-center justify-center cursor-pointer transition-all duration-300 ${
+          added 
+            ? "bg-emerald-600 text-white" 
+            : "bg-black text-white hover:opacity-80"
+        }`}
       >
-        <span>Add to Cart</span>
-        <ShoppingCart size={"15px"} />
+        {added ? <Check size={15} /> : <ShoppingCart size={15} />}
+        <span>{added ? "Added!" : "Add to Cart"}</span>
       </button>
     </div>
   );

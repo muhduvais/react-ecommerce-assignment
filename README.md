@@ -90,5 +90,12 @@ GitHub Actions is configured to run Playwright tests on every push.
 The original requirement suggested using FakeStore API. However, due to API unavailability during development, DummyJSON (https://dummyjson.com) was used as an alternative.
 The application is structured with a service layer, making it easy to switch APIs without affecting the UI.
 
+## ✨ Additional Features
+
+* **Pagination** implemented for product listing to handle large datasets efficiently
+* Accessible UI improvements (aria-labels for icon buttons)
+* API abstraction layer for easy switching between APIs
+* GitHub Actions workflow for automated Playwright testing
+
 
 ---
