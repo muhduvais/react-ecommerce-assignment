@@ -1,5 +1,6 @@
 import type { Product } from "../types";
 import { useCart } from "../context/CartContext";
+import { ShoppingCart } from "lucide-react";
 
 interface Props {
   product: Product;
@@ -32,9 +33,10 @@ const ProductCard = ({ product }: Props) => {
 
       <button
         onClick={handleAdd}
-        className="mt-auto bg-black text-white py-2 rounded hover:opacity-80"
+        className="mt-auto bg-black text-white py-2 rounded hover:opacity-80 flex gap-x-2 items-center justify-center cursor-pointer"
       >
-        Add to Cart
+        <span>Add to Cart</span>
+        <ShoppingCart size={"15px"} />
       </button>
     </div>
   );
