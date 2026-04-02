@@ -85,3 +85,24 @@ Multi-category filtering is not implemented due to API limitations and requireme
 - Added remove from cart functionality
 - Showed total items and total price
 - Added navigation to cart page
+
+## Phase 11 — Testing
+
+* Added E2E tests using Playwright
+* Covered:
+
+  * Product listing load
+  * Add to cart
+  * Remove from cart
+  * URL filter persistence
+* Configured Playwright to use system Chrome locally
+
+## Phase 12 — Finalization
+
+* Added README with setup and usage instructions
+* Moved API base URL to environment variables
+* Added GitHub Actions workflow for automated testing
+* Performed UI and code cleanup
+* Used DummyJSON API due to FakeStore API unavailability
+
+---
