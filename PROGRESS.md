@@ -30,3 +30,15 @@
 ### Note
 Used interfaces to keep data consistent.
 Cart stores only required product fields instead of full product object.
+
+## Phase 4 — API Layer
+
+- Set up Axios instance for API calls
+- Created product service functions:
+  - Fetch all products
+  - Fetch single product
+  - Fetch categories
+  - Fetch products by category
+
+### Note
+Centralized API logic to keep components clean and reusable.
