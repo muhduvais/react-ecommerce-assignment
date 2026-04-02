@@ -72,3 +72,9 @@ Multi-category filtering is not implemented due to API limitations and requireme
 - Displayed products in responsive grid
 - Created reusable ProductCard component
 - Added Add to Cart functionality
+
+## Phase 9 — Product Detail Page
+
+- Implemented dynamic route `/product/:id`
+- Fetched and displayed individual product details
+- Added Add to Cart functionality
