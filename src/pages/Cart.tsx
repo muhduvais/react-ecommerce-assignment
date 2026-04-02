@@ -84,6 +84,7 @@ function Cart() {
                     <button
                       onClick={() => removeFromCart(item.productId)}
                       className="shrink-0 w-7 h-7 flex items-center justify-center rounded-lg text-stone-300 hover:text-red-400 hover:bg-red-50 transition-colors"
+                      aria-label="Remove item"
                     >
                       <Trash2 size={14} />
                     </button>
